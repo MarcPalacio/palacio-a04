@@ -1,0 +1,24 @@
+@startuml
+
+class Solution41{
+    ' Methods
+    +{static}main(String)
+}
+
+class NameSorter{
+    'Variables
+    -listNames: ArrayList<String>
+
+    'Methods
+    'Adds elements to listNames from input file
+    +scanInputFile(File inputFileName)
+    'Adds elements to output string
+    +createOutput(): String output
+    'Writes string to output file
+    +writeToFile(String output)
+    'Sorts arraylist in alphabetical order
+    -sortList()
+}
+
+Solution41--NameSorter
+@enduml
