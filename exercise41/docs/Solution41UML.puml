@@ -1,30 +1,32 @@
 @startuml
 
 class Solution41{
-    ' Methods
-    +{static}main(String)
+    'Methods
+    +main(String)
 }
 
 class NameSorter{
-    'Variables
-    -listNames: ArrayList<String>
+    'Attributes
+    -listNames: List<String>
 
     'Methods
+    'Creates sorted name list
+    +createNameList(File input)
     'Adds elements to output string
     +createOutput(): String output
-    'Sorts arraylist in alphabetical order
-    -sortList()
 }
 
 class MyFileReader{
-    'Variables
-    -listNames: ArrayList<String> list
+    'Attributes (List to return to NameSorter)
+    -listNames: List<String> list
 
+    'Methods
     'Adds elements to listNames from input file
-    +scanInputFile(File inputFileName): ArrayList<String> list
+    +scanInputFile(File inputFileName): List<String> list
 }
 
 class MyFileWriter{
+    'Methods
     'Writes string to output file
     +writeToFile(String output)
 }
@@ -32,4 +34,6 @@ class MyFileWriter{
 
 
 Solution41--NameSorter
+Solution41--MyFileWriter
+NameSorter o-- MyFileReader
 @enduml
