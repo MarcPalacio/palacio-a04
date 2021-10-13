@@ -10,15 +10,26 @@ class NameSorter{
     -listNames: ArrayList<String>
 
     'Methods
-    'Adds elements to listNames from input file
-    +scanInputFile(File inputFileName)
     'Adds elements to output string
     +createOutput(): String output
-    'Writes string to output file
-    +writeToFile(String output)
     'Sorts arraylist in alphabetical order
     -sortList()
 }
+
+class MyFileReader{
+    'Variables
+    -listNames: ArrayList<String> list
+
+    'Adds elements to listNames from input file
+    +scanInputFile(File inputFileName): ArrayList<String> list
+}
+
+class MyFileWriter{
+    'Writes string to output file
+    +writeToFile(String output)
+}
+
+
 
 Solution41--NameSorter
 @enduml
