@@ -42,7 +42,9 @@ public class NameSorter {
         for(int i = 0; i < listNames.size(); i++){
             //  add string to output
             output.append(listNames.get(i));
-            output.append("\n");
+            if(i < listNames.size()-1){
+                output.append("\n");
+            }
         }
 
         // Returns string
