@@ -7,16 +7,17 @@ package baseline;
 
 import java.io.*;
 
+
 /*
  *  This class is responsible for writing to a file
  */
 
 public class MyFileWriter {
-    public void writeToFile(String write){
-        // Creates an output file
-        File output =  new File("data/exercise41_output.txt");
+    FilePathCreator fPC = new FilePathCreator();
+
+    public void writeToFile(String write, String fileOutputName){
         // Creates file writer
-        try(FileWriter fr = new FileWriter(output)){
+        try(FileWriter fr = new FileWriter(fPC.createFilePath(fileOutputName))){
             // Writes string from createOutput to file
             fr.write(write);
         } catch(FileNotFoundException e){

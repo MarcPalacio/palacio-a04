@@ -14,9 +14,10 @@ import java.util.*;
 
 public class MyFileReader {
     private List<String> listNames = new ArrayList<>();
+    FilePathCreator fPC = new FilePathCreator();
 
-    public List<String> scanInputFile(File inputFileName) throws IOException{
-        try (BufferedReader br = new BufferedReader(new FileReader(inputFileName))){
+    public List<String> scanInputFile(String fileInputName) throws IOException{
+        try (BufferedReader br = new BufferedReader(new FileReader(fPC.createFilePath(fileInputName)))){
             // Creates file reader
             String add;
             // while file reader has nextLine

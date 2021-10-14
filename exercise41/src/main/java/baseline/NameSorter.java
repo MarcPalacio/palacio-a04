@@ -19,10 +19,10 @@ public class NameSorter {
     // Instance of MyFileReader to have access to scanInputFile in MyFileReader
     MyFileReader fr = new MyFileReader();
 
-    public void createNameList(File input){
-        // Creates the list of names then sorts it
+    public void createNameList(String inputFileName){
+        // Adds to the list of names then sorts it
         try {
-            this.listNames = fr.scanInputFile(input);
+            this.listNames = fr.scanInputFile(inputFileName);
         } catch (IOException e) {
             System.out.println("An I/O Error occurred");
             e.printStackTrace();

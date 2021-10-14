@@ -31,9 +31,15 @@ class MyFileWriter{
     +writeToFile(String output)
 }
 
-
+class FilePathCreator{
+    'Methods
+    'Creates a path to a file, then returns that file
+    +createFilePath(String fileName): File file
+}
 
 Solution41--NameSorter
 Solution41--MyFileWriter
+MyFileReader o-- FilePathCreator
+MyFileWriter o-- FilePathCreator
 NameSorter o-- MyFileReader
 @enduml
