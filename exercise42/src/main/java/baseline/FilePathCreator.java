@@ -7,16 +7,19 @@ package baseline;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.*;
 
 /*
- *  This class is reponsible for creating the path variable for MyFileReader and MyFileWriter
+ *  This class is responsible for creating the path variable for MyFileReader and MyFileWriter
  */
 
 public class FilePathCreator {
     public File createFilePath(String fileName){
         // Creates a path to the directory
+        Path currentPath = Paths.get(System.getProperty("user.dir"));
+        Path filePath = Paths.get(currentPath.toString(), "data", fileName);
+        File output = new File(filePath.toString());
+
         // Returns the file using that path + fileName
-        return null;
+        return output;
     }
 }

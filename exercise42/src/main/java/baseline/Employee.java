@@ -5,31 +5,26 @@
 
 package baseline;
 
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
-
 /*
  *  This class is responsible for the creation of employees
  */
 
 public class Employee {
     // Attributes of Employee class
-    private String firstName;
     private String lastName;
+    private String firstName;
     private int salary;
 
     // Constructor of class employee
-    public Employee(String firstName, String lastName, int salary){
-        // Sets the parameters of the constructor to the
-        // attributes of the employee class
+    public Employee(String lastName, String firstName, int salary){
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.salary = salary;
     }
 
     @Override
     public String toString(){
-        // Returns the information about employee in format
-        // lastName + "\t" + firstName + "\t" + salary
-        // A format like that to fit the header
-        return "";
+        // Returns a string in the format of one line of the table
+        return String.format("%-10s%-10s%d", lastName, firstName, salary);
     }
 }
