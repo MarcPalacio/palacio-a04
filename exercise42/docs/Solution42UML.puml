@@ -1,13 +1,46 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-'Will update later
 
+class Solution41{
+    'Methods
+    +main(String)
+}
 
-autonumber
+class Employee{
+    'Attributes
+    -lastName: String
+    -firstName: String
+    -salary: int
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+    'Methods
+    'Default employee constructor
+    +employee()
+    'Employee constructor with parameters
+    +employee(String lastName, String firstName, int salary)
+    'Creates table
+    +createTable(List<Employee> employeeList): String table
+    'To string method that gets overridden to print out row of table
+    +toString(): String row
+}
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+class MyFileReader{
+    'Attributes (List to return to NameSorter)
+    -listEmployees: List<Employee>
+
+    'Methods
+    'Adds elements to listNames from input file
+    +scanInputFile(File inputFileName): List<Employee> list
+    'Splits the string from the read line
+    -splitInput(String input): Employee person
+}
+
+class FilePathCreator{
+    'Methods
+    'Creates a path to a file, then returns that file
+    +createFilePath(String fileName): File file
+}
+
+Solution41 -- Employee
+Solution41 -- MyFileReader
+MyFileReader -- FilePathCreator
+MyFileReader -- Employee
 @enduml

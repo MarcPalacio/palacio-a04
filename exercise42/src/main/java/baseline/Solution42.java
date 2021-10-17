@@ -10,8 +10,9 @@ import java.util.*;
 
 public class Solution42 {
     public static void main(String[] args){
-        // Creates instance of MyFileReader
+        // Creates instance of MyFileReader and Employee class
         MyFileReader reader = new MyFileReader();
+        Employee printer = new Employee();
         List<Employee> employeeList = new ArrayList<>();
         // Stores name of input file
         String fileInputName = "exercise42_input.txt";
@@ -25,21 +26,8 @@ public class Solution42 {
             a.printStackTrace();
         }
 
-        // Create a StringBuilder table to store output
-        StringBuilder output = new StringBuilder();
-        // Add the header to the StringBuilder table
-        output.append("Last      First     Salary\n");
-        output.append("--------------------------\n");
-        // for the size of the arraylist of employees
-        for(int i = 0; i < employeeList.size(); i++){
-            // Call the toString method inside the employee class
-            output.append(employeeList.get(i).toString());
-            if(i < employeeList.size()-1){
-                output.append("\n");
-            }
-        }
+        System.out.println(printer.createTable(employeeList));
 
-        // Print out the output
-        System.out.println(output);
+
     }
 }
