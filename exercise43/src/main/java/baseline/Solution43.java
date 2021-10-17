@@ -5,9 +5,13 @@
 
 package baseline;
 
+import java.io.IOException;
+
 public class Solution43 {
     public static void main(String[] args){
         // Creates an instance of FileCreator
-        // calls createFiles
+        FileCreator fC = new FileCreator();
+        // calls getInput
+        fC.getInput();
     }
 }
