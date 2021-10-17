@@ -24,6 +24,5 @@ public class MyFileWriter {
             System.out.println("An I/O Error occurred");
             a.printStackTrace();
         }
-
     }
 }

@@ -1,0 +1,31 @@
+@startuml
+class Solution45{
+    'Attributes
+    -input: Scanner
+
+    'Methods
+    +main(String)
+}
+
+class StringEditor{
+    'Methods
+    'Replaces all utilize in the string to use
+    +editString(String input, String oldWord, String newWord): String editedString
+}
+
+class MyFileReader{
+    'Methods
+    'Scans the file, calls editString, then returns the output
+    +scanInputFile(String fileInputName): String output
+}
+
+class MyFileWriter{
+    'Methods
+    'Writes to the user inputted output file
+    +writeToFile(String fileOutputName)
+}
+
+Solution45 -- MyFileReader
+Solution45 -- MyFileWriter
+MyFileReader -- StringEditor
+@enduml

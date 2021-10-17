@@ -17,19 +17,17 @@ public class MyFileReader {
         // Creates instance of StringEditor
         StringEditor se = new StringEditor();
         // Creates a file reader
-        try(BufferedReader br = new BufferedReader(new FileReader("data\\"+fileInputName))){
+        try(BufferedReader br = new BufferedReader(new FileReader("data\\" + fileInputName))){
             String add;
             // while file reader has a next line
             while((add = br.readLine()) != null){
                 // Reads line and calls editString in String editor
                 String newString = se.editString(add, "utilize", "use");
                 // added edited string to StringBuilder
-                output.append(newString);
-                if(add != null){
-                    output.append("\n");
-                }
+                output.append(newString + "\n");
             }
-            output.deleteCharAt(output.length()-1);
+            // Deletes the extra space at the end of the output
+            output.deleteCharAt(output.length() - 1);
         } catch(FileNotFoundException e){ // catch FileNotFoundException and IOException
             System.out.println("File not found");
         } catch (IOException a){
