@@ -9,10 +9,21 @@ package baseline;
  *  This class is responsible for writing to the output file
  */
 
+import java.io.*;
+
 public class MyFileWriter {
     public void writeToFile(String write, String fileOutputName){
         // Creates a file writer
-        // Takes the input write and writes it to the specified file
-        // catch FileNotFoundException and IOException
+        try(FileWriter fr = new FileWriter("data\\" + fileOutputName)){
+            // Takes the input write and writes it to the specified file
+            fr.write(write);
+            // catch FileNotFoundException and IOException
+        } catch(FileNotFoundException e){
+            System.out.println("File not found");
+        } catch (IOException a){
+            System.out.println("An I/O Error occurred");
+            a.printStackTrace();
+        }
+
     }
 }

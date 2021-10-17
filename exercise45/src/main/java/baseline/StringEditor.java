@@ -10,9 +10,9 @@ package baseline;
  */
 
 public class StringEditor {
-    public String editString(String input, String word){
+    public String editString(String input, String oldWord, String newWord){
         // This function will take in an input and a word
         // Then replace that word accordingly
-        return "";
+        return input.replace(oldWord, newWord);
     }
 }
