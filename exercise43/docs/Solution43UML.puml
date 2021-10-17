@@ -1,0 +1,32 @@
+@startuml
+class Solution43{
+    'Methods
+    +main(String)
+}
+
+class FileCreator{
+    'Methods
+    'Gets the input from user and calls createFile
+    +getInput()
+    'Creates the files
+    +createFile(String pathSite, String siteName, String authorName,
+    String choiceJS, String choiceCSS)
+    'Creates HTML file
+    -createHTML(String pathSite, String siteName, String author)
+}
+
+class Methods{
+    'Attributes
+    -in: Scanner
+
+    'Methods
+    'Asks user for input based on question
+    +askQuestion(String question): String answer
+    'Asks user for a yes or no (y or n)
+    'Uses try catch to ensure answer is a string
+    +verifyInput(String question): String answer
+}
+
+Solution43 -- FileCreator
+FileCreator -- Methods
+@enduml
